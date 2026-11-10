@@ -310,12 +310,14 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   .scan-grid{grid-template-columns:1fr 1fr;gap:60px}
   .dev-scan{width:min(440px,62vh)}
   .scan-steps li{font-size:19px}
-  .steps{grid-template-columns:repeat(5,1fr);gap:12px}
-  .st{flex-direction:column}
-  .st-b{min-height:270px}
-  .meter{position:static}
-  .st{opacity:.55}
-  .st-b p{color:#cfc9e2}
+  .machine .wrap{max-width:680px;margin-inline:auto}
+  .meter{position:sticky;top:72px;max-width:100%}
+  .steps{grid-template-columns:1fr;gap:clamp(14px,2.5vh,22px);max-width:600px;margin-inline:auto;width:100%}
+  .st{flex-direction:row;align-items:flex-start;opacity:.5}
+  .st.on,.st.past{opacity:1}
+  .st-b{min-height:0;width:100%}
+  .st h3{font-size:clamp(19px,2.2vw,23px)}
+  .st-b p{color:var(--mut)}
   .who-grid,.ses-row{grid-template-columns:repeat(2,1fr)}
   .ses-row{grid-template-columns:repeat(3,1fr)}
   .reels{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0}
