@@ -1,0 +1,887 @@
+/* אחידות: פונט + רספונסיב + בלוקי רועי בתוך עיצוב פאני באני */
+
+:root {
+  --fs-body: clamp(16px, 4.1vw, 18px);
+  --fs-lead: clamp(17px, 4.4vw, 20px);
+  --fs-h2: clamp(28px, 7.2vw, 50px);
+  --fs-h3: clamp(20px, 5.2vw, 26px);
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-black: 900;
+  --page-pad: 20px;
+  --section-y: clamp(44px, 10vw, 72px);
+}
+
+body {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+}
+
+/* רק משקלים שנטענו (400 / 700 / 900) — בלי סינתזה מגעילה */
+.sell-roei,
+.sell-roei .wrap {
+  font-family: Heebo, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: var(--fw-regular);
+  -webkit-font-smoothing: antialiased;
+}
+
+.sell-roei b,
+.sell-roei strong,
+.sell-roei h2,
+.sell-roei h3,
+.sell-roei .tk-h b,
+.sell-roei .counter b,
+.sell-roei .bigprice .amt,
+.sell-roei .px-num,
+.sell-roei .burn .big b,
+.sell-roei .side .n,
+.sell-roei .count b,
+.sell-roei .tk-cd b {
+  font-weight: var(--fw-black);
+}
+
+.sell-roei h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-black);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-wrap: balance;
+  max-width: 22ch;
+  margin-inline: auto;
+  margin-bottom: 12px;
+  color: var(--text, #fff);
+}
+
+.sell-roei h2 b {
+  font-weight: var(--fw-black);
+  color: var(--gold, #ffd60a);
+}
+
+.sell-roei h2 mark {
+  font-weight: var(--fw-black);
+}
+
+.sell-roei h3,
+.sell-roei .step h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+}
+
+.sell-roei .sub,
+.sell-roei .fitline,
+.sell-roei .calc-note,
+.sell-roei .lab-note {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-regular);
+  color: var(--muted, #cfc4ee);
+  text-align: center;
+  margin-inline: auto;
+  max-width: 38ch;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.sell-roei .eyebrow {
+  font-weight: var(--fw-bold);
+  font-size: 13px;
+}
+
+/* פריסה: יוצאים מרוחב ה-main בלי לשבור גלילה */
+.sell-roei {
+  margin-inline: calc(-1 * var(--page-pad));
+  width: calc(100% + 2 * var(--page-pad));
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+.sell-roei .wrap {
+  width: min(1080px, 100% - 32px);
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+.sell-roei section {
+  padding: var(--section-y) 0;
+}
+
+.sell-roei > #scan {
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
+  max-width: 100vw;
+  padding: 0 !important;
+}
+
+/* מחיר: full-bleed בלי 100vw (שובר מרכוז בתוך sell-roei ב-RTL) */
+.sell-roei--lower > #tracks.ofr {
+  margin-inline: calc(-1 * var(--page-pad));
+  width: auto;
+  max-width: none;
+  box-sizing: border-box;
+  padding-inline: var(--page-pad);
+  padding-block: clamp(32px, 6vw, 52px) !important;
+}
+
+#tracks .wrap.ofr-in {
+  width: 100%;
+  max-width: 660px;
+  margin-inline: auto;
+  padding-inline: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tracks.ofr h2 {
+  max-width: 26ch;
+  text-align: center;
+  margin-inline: auto;
+}
+
+#tracks.ofr .px-deal {
+  display: inline-block;
+  margin-inline: auto;
+}
+
+#tracks.ofr .sub.fitline {
+  margin-bottom: 18px;
+}
+
+#tracks.ofr .bigprice {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+#tracks.ofr .bigprice::before {
+  inset: -18% -4%;
+}
+
+#tracks.ofr .vat {
+  margin-bottom: 0;
+}
+
+#tracks.ofr .ticket {
+  margin-top: 28px;
+  width: 100%;
+  max-width: min(520px, 100%);
+}
+
+#tracks.ofr .bonus2 {
+  width: 100%;
+  max-width: 34ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+#tracks.ofr .incl,
+#tracks.ofr .pay {
+  width: 100%;
+  max-width: min(520px, 100%);
+  margin-inline: auto;
+}
+
+#tracks.curtain {
+  clip-path: none;
+}
+
+#tracks.curtain.on {
+  clip-path: none;
+}
+
+/* כרטיסים כהים במקום לבן ישן */
+.sell-roei .inputs,
+.sell-roei .calc .inputs {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.13)) !important;
+  color: #fff;
+}
+
+.sell-roei .field label {
+  font-weight: var(--fw-bold);
+  font-size: clamp(15px, 3.8vw, 18px);
+}
+
+.sell-roei .field label output {
+  font-weight: var(--fw-black);
+  font-size: clamp(22px, 6vw, 30px);
+}
+
+.sell-roei .field small {
+  color: var(--dim, #a99bd3);
+}
+
+.sell-roei .side.now,
+.sell-roei .side.av {
+  border-radius: 18px;
+}
+
+.sell-roei .side h3 {
+  font-weight: var(--fw-bold);
+}
+
+.sell-roei .side .n {
+  font-weight: var(--fw-black);
+  font-size: clamp(22px, 6vw, 30px);
+}
+
+.sell-roei .side p {
+  font-size: clamp(14px, 3.6vw, 16px);
+  font-weight: var(--fw-regular);
+}
+
+.sell-roei .burn .k,
+.sell-roei .burn .year {
+  font-weight: var(--fw-regular);
+  font-size: clamp(14px, 3.6vw, 16px);
+}
+
+.sell-roei .counter {
+  font-weight: var(--fw-regular);
+  font-size: clamp(18px, 4.5vw, 22px);
+  text-wrap: balance;
+  padding-inline: 12px;
+}
+
+.sell-roei .step p,
+.sell-roei .syl-b,
+.sell-roei .incl li,
+.sell-roei .chat .q,
+.sell-roei .chat .a {
+  font-size: clamp(16px, 4.1vw, 18px);
+  font-weight: var(--fw-regular);
+}
+
+.sell-roei .viz {
+  background: rgba(0, 0, 0, 0.25);
+  border-color: var(--line, rgba(255, 255, 255, 0.12));
+}
+
+/* המכונה — בלי ציר וורוד; מד 5 שלבים + כרטיסים */
+#machine .steps::before,
+#machine .fill {
+  display: none !important;
+}
+
+#machine .steps {
+  padding-right: 0;
+  gap: clamp(18px, 3.5svh, 28px);
+}
+
+#machine .steps-meter {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+  grid-column: 1 / -1;
+}
+
+#machine .steps-meter i {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background 0.45s ease, box-shadow 0.45s ease, transform 0.35s ease;
+}
+
+#machine .steps-meter i.past {
+  background: linear-gradient(270deg, #ff5e3a, #ffc23c);
+}
+
+#machine .steps-meter i.on {
+  background: var(--gold, #ffd60a);
+  box-shadow: 0 0 14px rgba(255, 214, 10, 0.35);
+  transform: scaleY(1.35);
+}
+
+#machine .step {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: start;
+  opacity: 0.78;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  transition: opacity 0.45s ease, border-color 0.45s ease, background 0.45s ease, box-shadow 0.45s ease;
+}
+
+#machine .step.past {
+  opacity: 0.88;
+}
+
+#machine .step.on {
+  opacity: 1;
+  border-color: rgba(255, 196, 60, 0.32);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.22);
+}
+
+#machine .step .dot {
+  position: static;
+  width: 38px;
+  height: 38px;
+  margin: 2px 0 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.72);
+  box-shadow: none;
+}
+
+#machine .step.past .dot {
+  border-color: rgba(255, 196, 60, 0.45);
+  color: #ffc23c;
+}
+
+#machine .step.on .dot {
+  background: linear-gradient(145deg, #ff5e3a, #ffc23c);
+  border-color: transparent;
+  color: #1a0f28;
+  box-shadow: 0 0 0 3px rgba(255, 94, 58, 0.18);
+}
+
+#machine .step h3 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#machine .step p,
+#machine .step .viz {
+  grid-column: 2;
+}
+
+.sell-roei .pain {
+  padding-block: clamp(32px, 7vw, 52px);
+  padding-inline: var(--page-pad);
+}
+
+.sell-roei .pain-lines {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(8px, 1.6vh, 14px);
+  max-width: min(38ch, 100%);
+  margin-inline: auto;
+}
+
+.sell-roei .pain-lines p {
+  margin: 0;
+  width: 100%;
+  font-size: clamp(19px, 4.6vw, 28px);
+  font-weight: var(--fw-bold);
+  line-height: 1.32;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+
+.sell-roei .pain-lines p:last-child {
+  font-weight: var(--fw-black);
+  color: var(--pink, #ff4fb4);
+}
+
+.sell-roei .scan-lines {
+  font-weight: var(--fw-bold);
+  height: auto;
+  min-height: 2.6em;
+  padding-inline: 12px;
+}
+
+.sell-roei .scan-lines p {
+  white-space: normal;
+  text-wrap: balance;
+  font-size: clamp(17px, 4.6vw, 24px);
+  font-weight: var(--fw-bold);
+  line-height: 1.25;
+  padding-inline: 8px;
+}
+
+.sell-roei .lab-card h3 {
+  font-weight: var(--fw-black);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.sell-roei .lab-work {
+  grid-template-columns: 1fr !important;
+  min-height: 0;
+}
+
+.sell-roei .lab-phone {
+  max-width: 220px;
+  margin-inline: auto;
+}
+
+.sell-roei .faq details summary {
+  font-weight: var(--fw-bold);
+  font-size: clamp(17px, 4.4vw, 20px);
+}
+
+.sell-roei .cost h2 {
+  max-width: none;
+}
+
+.sell-roei .now p.big {
+  font-weight: var(--fw-bold);
+  font-size: clamp(22px, 5.8vw, 34px);
+  max-width: 28ch;
+}
+
+.sell-roei .roei-btn {
+  font-weight: var(--fw-black) !important;
+  font-size: clamp(16px, 4.2vw, 18px) !important;
+  max-width: 100%;
+}
+
+.ofr .bigprice .amt {
+  font-weight: var(--fw-black);
+}
+
+.ofr .tk-h {
+  font-weight: var(--fw-black);
+}
+
+/* ===== מובייל ===== */
+@media (max-width: 760px) {
+  :root {
+    --section-y: 40px;
+    --page-pad: 16px;
+  }
+
+  main {
+    padding-inline: var(--page-pad);
+  }
+
+  .sell-roei {
+    margin-inline: calc(-1 * var(--page-pad));
+    width: calc(100% + 2 * var(--page-pad));
+  }
+
+  .sell-roei > #scan {
+    height: min(200svh, 1800px) !important;
+  }
+
+  .scan-box {
+    width: min(88vw, 360px);
+  }
+
+  .calc {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 18px !important;
+  }
+
+  .vs {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stage {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #machine .steps {
+    gap: 16px;
+    margin-top: 22px;
+  }
+
+  #machine .step {
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 12px;
+    padding: 14px 14px;
+  }
+
+  #machine .step .dot {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: var(--fw-black);
+  }
+
+  #machine .step p {
+    max-width: none;
+  }
+
+  .chat {
+    margin-top: 20px;
+    gap: 18px;
+  }
+
+  .chat .q,
+  .chat .a {
+    max-width: 94%;
+    font-size: 16px;
+  }
+
+  .bigprice .amt {
+    font-size: clamp(52px, 15vw, 72px) !important;
+  }
+
+  .sell-roei--lower > #tracks.ofr {
+    padding-block: 28px 32px !important;
+  }
+
+  #tracks.ofr .bigprice::before {
+    inset: -12% -2%;
+  }
+
+  #tracks.ofr .ticket {
+    margin-top: 22px;
+  }
+
+  .ticket {
+    margin-top: 28px;
+  }
+
+  .tk-in {
+    padding: 24px 16px 20px;
+  }
+
+  .incl {
+    padding: 18px 16px;
+  }
+
+  .outcome {
+    grid-template-columns: 1fr !important;
+  }
+
+  .outcome div {
+    font-weight: var(--fw-bold);
+    font-size: 16px;
+  }
+
+  .syl-item summary {
+    min-height: auto;
+    padding: 12px 0;
+  }
+
+  .syl-t {
+    font-size: 17px !important;
+    font-weight: var(--fw-bold) !important;
+  }
+
+  .count {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .count div {
+    min-width: 72px;
+    flex: 1 1 72px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 9.2vw, 42px);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+
+  .reel {
+    flex: 0 0 82%;
+    max-width: 280px;
+  }
+
+  .ba-sec .lab-ba {
+    width: min(300px, 88vw);
+  }
+}
+
+/* לפני/אחרי — וידאו על וידאו בלבד, בלי מסגרת פנימית */
+.ba-sec .lab-ba {
+  isolation: isolate;
+}
+
+.ba-sec .lab-ba:focus-within {
+  outline: 3px solid var(--gold, #ffd60a);
+  outline-offset: 4px;
+  border-radius: 18px;
+}
+
+.ba-sec .lab-ba video:focus-visible {
+  outline: none;
+}
+
+@media (min-width: 761px) {
+  .calc {
+    grid-template-columns: 0.95fr 1.05fr;
+  }
+
+  .sell-roei .lab-work {
+    grid-template-columns: 1fr 150px !important;
+  }
+
+  .lab-grid--solo .lab-work {
+    grid-template-columns: 1fr min(200px, 28vw) !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .sell-roei h2 {
+    max-width: 24ch;
+  }
+
+  .outcome {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ofr .pay-btns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* תחתית: צ'אט + עלות + FAQ — ללא בורות */
+.sell-roei--lower .chat-sec {
+  padding-block: clamp(32px, 6vw, 52px);
+}
+
+.sell-roei--lower .chat-sec .wrap {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.sell-roei--lower .chat-sec h2 {
+  margin-bottom: 8px;
+}
+
+.sell-roei--lower .chat {
+  margin-top: 16px;
+  gap: 22px;
+}
+
+.sell-roei--lower .now,
+.sell-roei--lower .faq {
+  padding-top: clamp(28px, 5vw, 44px) !important;
+  padding-bottom: clamp(28px, 5vw, 44px);
+}
+
+.sell-roei--lower .now .wrap,
+.sell-roei--lower .faq .wrap {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.sell-roei--lower .faq {
+  text-align: right;
+}
+
+.sell-roei--lower .faq .wrap {
+  text-align: inherit;
+}
+
+.sell-roei--lower .cost {
+  margin-top: 0;
+  text-align: center;
+}
+
+.sell-roei--lower .rv.on,
+.sell-roei--lower section > .wrap > .rv.on {
+  opacity: 1;
+  transform: none;
+}
+
+/* מכונה — גלילה חושפת שלב אחד בכל פעם */
+#machine.machine-scroll {
+  min-height: min(200svh, 1750px);
+  padding-bottom: clamp(24px, 4vw, 40px) !important;
+}
+
+#machine .machine-pin {
+  position: sticky;
+  top: max(64px, 6svh);
+  z-index: 2;
+}
+
+#machine .step.future {
+  opacity: 0.22;
+  max-height: 4.5em;
+  overflow: hidden;
+  padding-block: 10px;
+  margin: 0;
+}
+
+#machine .step.future .viz {
+  display: none;
+}
+
+#machine .step:not(.future) {
+  transition: opacity 0.45s ease, max-height 0.55s ease, padding 0.4s ease, border-color 0.45s ease;
+}
+
+/* ROI + עלות כלים */
+.sell-roei--lower .roi-sec,
+.sell-roei--lower .tools-sec {
+  padding-block: clamp(28px, 5vw, 44px);
+}
+
+.sell-roei--lower .roi-sec .wrap,
+.sell-roei--lower .tools-sec .wrap {
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.roi-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .roi-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+.roi-card {
+  padding: 18px 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.roi-card--hi {
+  border-color: rgba(255, 196, 60, 0.38);
+  background: linear-gradient(160deg, rgba(255, 94, 58, 0.14), rgba(255, 196, 60, 0.08));
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+.roi-k {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.roi-v {
+  margin: 6px 0 4px;
+  font-size: clamp(26px, 6vw, 34px);
+  font-weight: var(--fw-black, 900);
+  color: #fff;
+  font-feature-settings: "tnum";
+}
+
+.roi-card--hi .roi-v {
+  background: var(--goldgrad, linear-gradient(90deg, #ffd60a, #ff4fb4));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.roi-s {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.sell-roei--lower .tools-sec .cost {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: clamp(20px, 4vw, 28px);
+}
+
+.sell-roei--lower > #tracks.ofr .pay {
+  margin-top: 22px;
+  margin-bottom: 0;
+  padding-bottom: 4px;
+}
+
+.sell-roei--lower .chat-sec {
+  padding-top: clamp(28px, 5vw, 40px) !important;
+  min-height: 0;
+}
+
+.sell-roei--lower .chat-sec h2.rv {
+  min-height: 0;
+}
+
+.sell-roei--lower .faq h2.rv {
+  margin-bottom: 12px;
+}
+
+.sell-roei--lower .faq details {
+  margin-bottom: 8px;
+}
+
+.sell-roei--lower .faq details p {
+  color: var(--ink-2, #cfc8e8);
+}
+
+.sell-roei--lower #tracks.ofr + .chat-sec {
+  margin-top: 0;
+}
+
+#scan .scan-box canvas {
+  z-index: 3;
+  pointer-events: none;
+}
+
+#scan .scan-bar {
+  z-index: 4;
+}
+
+/* לפני תנסה — זכוכית כהה */
+.sell-roei #lab.lab-sec {
+  background: radial-gradient(70% 48% at 50% 0, rgba(255, 79, 180, 0.14), transparent 72%) !important;
+  padding-block: clamp(36px, 7vw, 56px);
+}
+
+.sell-roei .lab-grid--solo {
+  margin-top: 20px;
+}
+
+.sell-roei .lab-card {
+  padding: 18px 16px 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sell-roei .lab-note {
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+
+.sell-roei .lab-chip {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.sell-roei .lab-chip.on {
+  background: linear-gradient(145deg, #ff5e3a, #ff4fb4) !important;
+  border-color: transparent;
+}
+
+/* מחשבון — כרטיס «היום» על רקע כהה */
+.sell-roei .side.now {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #fff;
+}
+
+.sell-roei .side.now h3,
+.sell-roei .side.now .n {
+  color: #fff;
+}
+
+.sell-roei .side.now p {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.sell-roei .clone {
+  background: transparent;
+}
+
+/* סריקה — פס ורשת בולטים יותר */
+#scan .scan-bar {
+  height: 4px;
+  box-shadow: 0 0 32px 10px rgba(255, 196, 60, 0.85);
+}

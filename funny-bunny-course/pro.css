@@ -1,0 +1,34 @@
+:root{--bg:#0a0b0f;--bg2:#111319;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.10);--tx:#f3f2ee;--mut:#a4a8b3;--pink:#d6a64a;--vio:#d6a64a;--org:#d6a64a;--cy:#d6a64a;--grad:linear-gradient(90deg,#ecd29b,#c9973c);--r:14px}
+body{background:var(--bg)}
+.aurora,.grain,.hero-bunny,.final-badge{display:none!important}
+section{border-top:1px solid rgba(255,255,255,.05)}
+section.hero{border-top:0}
+.kicker{color:#d6a64a;letter-spacing:.12em;font-size:13px}
+.h2{font-weight:800;letter-spacing:-.025em}
+.g,.ln-g>span{background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;color:#d6a64a!important}
+.lead,.sub{color:var(--mut)}
+.btn{border-radius:12px;font-weight:700}
+.btn-wa{box-shadow:none!important}
+.btn-wa:hover{transform:translateY(-1px)!important;box-shadow:none!important}
+.btn-ghost{border:1px solid var(--line)!important;background:transparent!important}
+.eyebrow,.chips li{border-radius:8px;background:rgba(255,255,255,.04)}
+.dot{background:#d6a64a!important;box-shadow:none!important}
+.trk,.ticket,[class*="card"]{border-radius:16px!important;box-shadow:none!important;background:var(--card)!important;border:1px solid var(--line)!important}
+.trk-ic:empty{display:none}
+.ph-tag{border-radius:6px}
+.phone{box-shadow:0 20px 50px -20px rgba(0,0,0,.8)!important}
+.ba{box-shadow:0 30px 70px -30px rgba(0,0,0,.9)!important;border-radius:18px!important}
+.ba-grip{background:#f3f2ee!important;color:#0a0b0f!important}
+.ba-grip .ear{display:none!important}
+.final-bunny{animation:none!important;box-shadow:0 0 0 3px #d6a64a!important}
+.top{background:rgba(10,11,15,.85)!important;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand small{color:var(--mut)}
+/* about */
+.about-in{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center}
+.about-ph{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:3px solid #d6a64a}
+.about .lead{max-width:600px;margin-bottom:14px}
+.about .lead a,.about-links a{color:#d6a64a;text-decoration:none;font-weight:700}
+.about-links{margin:6px 0 0;color:var(--mut)}
+@media (max-width:720px){.about-in{grid-template-columns:1fr;text-align:center;justify-items:center}.about-ph{width:170px;height:170px}.about .lead{margin-inline:auto}}
+.trk::before,.trk::after{display:none!important}
+.trk i{color:#d6a64a}

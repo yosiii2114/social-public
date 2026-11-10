@@ -1,0 +1,69 @@
+/* Team lanyard rail — static landings (yosef + funnybunny) */
+.collab-lanyard{position:relative;margin:8px auto 24px;max-width:920px;isolation:isolate}
+.collab-rail-stage{position:relative;padding:0 8px 8px;min-height:300px}
+.collab-rail-bar{position:absolute;z-index:2;left:3.5%;right:3.5%;top:14px;height:10px;border-radius:99px;background:linear-gradient(180deg,#f3f4f6 0%,#fff 18%,#c4c9d0 38%,#8b939c 58%,#6b7280 78%,#4b5563 100%);box-shadow:0 1px 0 rgba(255,255,255,.85) inset,0 4px 14px -4px rgba(17,24,39,.35),0 10px 28px -16px rgba(17,24,39,.2)}
+.collab-rail-bar::after{content:"";position:absolute;inset:0;border-radius:inherit;background:repeating-linear-gradient(90deg,transparent 0 3px,rgba(255,255,255,.35) 3px 4px,transparent 4px 8px);opacity:.45;pointer-events:none}
+.collab-rail-cap{position:absolute;top:50%;width:16px;height:26px;margin-top:-13px;border-radius:4px;background:linear-gradient(90deg,#9ca3af,#6b7280 55%,#4b5563);box-shadow:0 3px 8px rgba(17,24,39,.25)}
+.collab-rail-cap::before,.collab-rail-cap::after{content:"";position:absolute;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:rgba(17,24,39,.35)}
+.collab-rail-cap::before{top:5px}.collab-rail-cap::after{bottom:5px}
+.collab-rail-cap--start{right:calc(100% + 4px)}.collab-rail-cap--end{left:calc(100% + 4px)}
+.collab-rail-track{position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:6px 12px;padding:46px 10px 16px;margin-top:8px;touch-action:pan-x pan-y}
+.collab-rail-hint{margin:4px auto 0;font-size:13px;text-align:center;opacity:.72;line-height:1.45}
+.collab-lanyard[data-theme="light"] .collab-rail-hint{color:rgba(37,22,58,.72)}
+.collab-lanyard[data-theme="dark"] .collab-rail-hint{color:rgba(233,213,255,.78)}
+.lanyard-item{--pivot-y:22px;--swing:0deg;--lift:0px;--stretch:0px;--cord-scale:1;flex:0 0 auto;width:114px;position:relative}
+.lanyard-pivot{position:relative;width:100%}
+.lanyard-ring{position:absolute;left:50%;top:0;width:18px;height:14px;margin-left:-9px;margin-top:-2px;border:2px solid #9ca3af;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#d1d5db 70%,#9ca3af);box-shadow:inset 1px 0 0 rgba(0,0,0,.15),0 2px 4px rgba(0,0,0,.18);z-index:3}
+.lanyard-swing{display:block;position:relative;padding-top:var(--pivot-y);transform-origin:50% var(--pivot-y);transform:rotate(calc(var(--rest,0deg) + var(--swing))) translateY(var(--lift));will-change:transform}
+.lanyard-strap{position:absolute;left:50%;top:var(--pivot-y);width:11px;height:calc(var(--strap-len,56px) + var(--stretch));margin-left:-5.5px;border-radius:2px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.18) 0 2px,transparent 2px 4px),linear-gradient(90deg,color-mix(in srgb,var(--tone) 68%,#000),var(--tone) 45%,color-mix(in srgb,var(--tone) 80%,#fff));box-shadow:1px 0 0 rgba(255,255,255,.25) inset,-1px 0 0 rgba(0,0,0,.12) inset;transform-origin:50% 0}
+.lanyard-strap::before{content:"";position:absolute;inset:0 2px;border-inline:1px dashed rgba(255,255,255,.35)}
+.lanyard-reel{position:absolute;left:50%;top:calc(var(--pivot-y) + var(--strap-len,56px) + var(--stretch) - 2px);width:22px;height:22px;margin-left:-11px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#4b5563,#111 58%,#000);box-shadow:inset 0 -2px 3px rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.35)}
+.lanyard-reel::after{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:linear-gradient(180deg,#e5e7eb,#9ca3af)}
+.lanyard-cord{position:absolute;left:50%;top:calc(var(--pivot-y) + var(--strap-len,56px) + var(--stretch) + 18px);width:2px;height:12px;margin-left:-1px;background:rgba(17,24,39,.55);transform-origin:50% 0;transform:scaleY(var(--cord-scale));border-radius:1px}
+.lanyard-hang{position:relative;padding-top:10px}
+.lanyard-hang::before{content:"";position:absolute;left:50%;top:0;width:26px;height:11px;margin-left:-13px;background:linear-gradient(180deg,#6b7280,#374151);clip-path:polygon(22% 0,78% 0,100% 72%,94% 100%,6% 100%,0 72%);filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+.lanyard-badge{position:relative;display:block;width:100%;margin:0;padding:0;border:0;background:transparent;cursor:pointer;text-align:center;font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+.lanyard-badge:focus-visible{outline:2px solid var(--tone,#8b5cf6);outline-offset:4px;border-radius:14px}
+.lanyard-flip{--flip-y:0deg;display:block;position:relative;transform-style:preserve-3d;transform:perspective(880px) rotateY(var(--flip-y));min-height:178px}
+.lanyard-item.is-active{z-index:8}
+.lanyard-item.is-flipped{z-index:12}
+.badge-face{position:relative;display:flex;flex-direction:column;align-items:center;backface-visibility:hidden;border-radius:13px;border:1px solid rgba(17,24,39,.1);background:#fff;color:#1f2937;box-shadow:0 16px 36px -18px rgba(17,24,39,.35),0 4px 12px -8px rgba(17,24,39,.18);padding:0 10px 10px;min-height:178px;overflow:hidden}
+.badge-face--back{position:absolute;inset:0;transform:rotateY(180deg);justify-content:center;gap:6px;padding-top:42px}
+.badge-band{position:absolute;left:0;right:0;top:0;height:52px;background:repeating-linear-gradient(135deg,transparent 0 5px,rgba(255,255,255,.12) 5px 7px),linear-gradient(180deg,color-mix(in srgb,var(--tone) 75%,#fff),var(--tone))}
+.badge-hole{position:absolute;top:38px;left:50%;width:42px;height:8px;margin-left:-21px;border-radius:99px;background:#f3f4f6;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+.badge-avatar{position:relative;z-index:1;margin-top:30px;width:58px;height:58px;border-radius:50%;padding:3px;background:#fff;box-shadow:0 6px 18px -8px rgba(0,0,0,.35)}
+.badge-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.badge-name{display:block;margin-top:8px;font-size:14px;font-weight:800;line-height:1.2;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badge-role{display:block;margin-top:2px;font-size:11px;opacity:.68;line-height:1.3}
+.badge-team{display:block;margin-top:6px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
+.badge-barcode{display:block;margin-top:auto;width:100%;height:16px;background:repeating-linear-gradient(90deg,#111 0 2px,transparent 2px 4px,#111 4px 5px,transparent 5px 7px);opacity:.85;border-top:1px dashed rgba(17,24,39,.12);padding-top:6px}
+.badge-ig{font-size:12px;font-weight:700;color:var(--tone,#6d28d9);text-decoration:none}
+.badge-ig--text{font-size:11px;font-weight:600;color:inherit;opacity:.85}
+.badge-back-note{font-size:10px;opacity:.55}
+.lanyard-item.tone-1{--tone:#ea580c;--tone2:#f97316}
+.lanyard-item.tone-2{--tone:#0d9488;--tone2:#14b8a6}
+.lanyard-item.tone-3{--tone:#2563eb;--tone2:#3b82f6}
+.lanyard-item.tone-4{--tone:#ca8a04;--tone2:#eab308}
+.lanyard-item.tone-5{--tone:#9333ea;--tone2:#a855f7}
+.collab-lanyard--live .lanyard-badge,.collab-lanyard--live .badge-face{transition:box-shadow .25s ease,filter .25s ease}
+.collab-lanyard--live .lanyard-swing{transition:none}
+.lanyard-item.is-active .badge-face{box-shadow:0 22px 44px -16px rgba(17,24,39,.42),0 8px 20px -10px color-mix(in srgb,var(--tone) 40%,transparent)}
+@media(max-width:759px){
+  .collab-rail-track{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:46px 20px 16px;margin-inline:-12px;scrollbar-width:none}
+  .collab-rail-track::-webkit-scrollbar{display:none}
+  .lanyard-item{scroll-snap-align:center}
+}
+.collab-lanyard[data-theme="dark"] .badge-face{box-shadow:0 20px 40px -16px rgba(0,0,0,.65),0 6px 16px -8px rgba(139,92,246,.35)}
+@media(prefers-reduced-motion:reduce){
+  .lanyard-swing,.lanyard-flip{transform:none!important}
+  .lanyard-cord{transform:none!important}
+}
+
+/* marquee mode (v5): one row, belt moved by JS, cards keep their swing */
+.collab-lanyard--marquee .collab-rail-track{display:block;overflow:hidden;flex-wrap:nowrap;scroll-snap-type:none;padding:46px 0 16px;margin-inline:0;touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
+.collab-lanyard--marquee .collab-rail-track.is-dragging{cursor:grabbing}
+.collab-rail-belt{position:relative;display:flex;flex-wrap:nowrap;align-items:flex-start;gap:12px;width:max-content;padding-inline:14px;will-change:transform;transform:translate3d(0,0,0)}
+.collab-lanyard--marquee .lanyard-item{scroll-snap-align:none}
+.collab-lanyard--marquee .lanyard-badge img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+@media(max-width:759px){.collab-lanyard--marquee .collab-rail-track{margin-inline:-12px}}
+@media(min-width:760px){.collab-lanyard--marquee .collab-rail-track{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}}

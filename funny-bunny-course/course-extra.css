@@ -1,0 +1,40 @@
+/* סדנה — שכבה על ig-landing (פאני באני) */
+.audience{display:grid;gap:14px;margin-top:22px}
+@media(min-width:720px){.audience{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.audience{grid-template-columns:repeat(4,1fr)}}
+.audience article{padding:18px 16px;border-radius:var(--radius);background:var(--glass);border:1px solid var(--line);box-shadow:0 12px 40px -24px rgba(0,0,0,.5)}
+.audience b{display:block;font-size:19px;margin-bottom:6px}
+.audience span{color:var(--muted);font-size:15px;line-height:1.45}
+.ba-sec{text-align:center;padding-inline:12px}
+.ba-sec h2{font-size:clamp(26px,7vw,48px);text-wrap:balance;max-width:20ch;margin-inline:auto}
+.ba-sec p.hint{margin-bottom:12px;max-width:42ch;margin-inline:auto}
+.ba-flow{display:grid;gap:10px;max-width:520px;margin:0 auto 22px;text-align:right;font-size:15px;color:var(--muted)}
+.ba-flow li{display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.ba-flow b{color:var(--gold2);font-weight:900;min-width:1.4em}
+.ba-prompt{display:inline-block;margin-bottom:16px;padding:8px 16px;border-radius:999px;background:rgba(255,214,10,.12);border:1px solid rgba(255,214,10,.35);color:#fff;font-weight:700;font-size:15px}
+.ba-sec .lab-ba{--p:6%;position:relative;direction:ltr;width:min(340px,92vw);aspect-ratio:9/16;margin:0 auto;border-radius:22px;overflow:hidden;background:#1a0f28;box-shadow:0 24px 56px -20px rgba(0,0,0,.65);touch-action:none;cursor:ew-resize;user-select:none;-webkit-tap-highlight-color:transparent}
+.ba-sec .lab-ba video{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;pointer-events:none;border:0;border-radius:0;background:transparent;transform:translateZ(0)}
+.ba-sec .lab-ba video:focus{outline:none}
+.ba-sec .lab-ba #baRaw{z-index:1}
+.ba-sec .lab-ba #baEdit{z-index:2}
+.ba-sec .lab-ba .top{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.ba-sec .lab-ba .ba-divider{position:absolute;z-index:4;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.35),0 0 20px rgba(255,255,255,.55);pointer-events:none}
+.ba-sec .lab-ba .ba-grip{position:absolute;z-index:5;top:50%;left:var(--p);transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border-radius:50%;background:#fff;color:#1a0f28;border:0;box-shadow:0 4px 24px rgba(0,0,0,.45),inset 0 0 0 1px rgba(0,0,0,.06);pointer-events:none;cursor:ew-resize}
+.ba-sec .lab-ba .ba-label{position:absolute;z-index:3;top:14px;padding:7px 12px;border-radius:999px;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);color:#fff;font-size:12px;font-weight:800;letter-spacing:.02em;direction:rtl;pointer-events:none;border:1px solid rgba(255,255,255,.12)}
+.ba-sec .lab-ba .ba-label--before{right:12px}
+.ba-sec .lab-ba .ba-label--after{left:12px}
+.lab-credit{margin-top:12px;font-size:14px;color:var(--dim)}
+.workshop-card{max-width:520px;margin:28px auto 0;padding:24px 20px;border-radius:28px;background:linear-gradient(145deg,rgba(255,79,180,.18),rgba(124,58,237,.22));border:1px solid rgba(255,214,10,.35);text-align:center}
+.workshop-card .price{font-size:clamp(40px,12vw,56px);font-weight:900;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:8px 0}
+.workshop-card ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px;text-align:right;color:var(--muted);font-size:15px}
+.syl{max-width:680px;margin:22px auto 0;text-align:right;display:grid;gap:12px}
+.syl details{border-radius:18px;border:1px solid var(--line);background:var(--glass);padding:0 16px}
+.syl summary{cursor:pointer;font-weight:800;padding:14px 0;list-style:none}
+.syl summary::-webkit-details-marker{display:none}
+.syl ul{margin:0 0 14px;padding:0 16px 4px 0;color:var(--muted);font-size:15px}
+.faq{max-width:680px;margin:0 auto;display:grid;gap:10px;text-align:right}
+.faq details{border-radius:16px;border:1px solid var(--line);background:rgba(0,0,0,.2);padding:0 16px}
+.faq summary{font-weight:700;padding:14px 0;cursor:pointer}
+.faq p{margin:0 0 14px;color:var(--muted);font-size:15px;line-height:1.5}
+section.link-row{text-align:center;padding-top:28px;padding-bottom:20px}
+.link-row a{color:var(--gold);font-weight:700}

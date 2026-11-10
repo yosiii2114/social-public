@@ -1,0 +1,22 @@
+variants/
+docs-package/
+עדכון שני/
+deliverables/
+memory/
+skills/
+*.py
+index-roei-legacy.html
+roei-*.html
+roei-*.js
+roei-*.css
+course-*.css
+ig-landing.*
+v/_*.mp4
+v/_*.jpg
+v/ba_raw.*
+v/ba_edit.*
+v/bedouin2.mp4
+v/djs.mp4
+v/hero-reel.*
+v/sales.*
+v/mesh.json
