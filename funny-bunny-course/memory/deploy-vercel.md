@@ -29,14 +29,23 @@
 - [ ] `img/yosef_c.webp`, `img/c_*.webp`, `f/heebo-*.woff2`
 - [ ] `curl -I` על 3–5 נתיבים אחרי deploy
 
-## פריסה
+## פריסה (שגרה — GitHub בלבד)
+
 ```powershell
-cd C:\Users\yosef\Desktop\my-ai-vault\projects\social-public\funny-bunny-course
-# VERCEL_TOKEN מ־~\.cursor\secrets\vercel.env
-npx --yes vercel@latest deploy --prod --yes --token $env:VERCEL_TOKEN
+cd C:\Users\yosef\Desktop\my-ai-vault\projects\social-public
+git add funny-bunny-course/
+git commit -m "..."
+git push origin main
 ```
 
-או push ל־`main` ב־`social-public` (Root Directory: `funny-bunny-course`) — **רק אחרי `git add` לכל `v/` ו־`img/``.
+Vercel: פרויקט `funny-bunny-course` · Root Directory **`funny-bunny-course`** · repo `yosiii2114/social-public`.
+
+### CLI (חירום בלבד — דורס/מבלבל אם Root Directory שבור)
+
+```powershell
+cd funny-bunny-course
+npx --yes vercel@latest deploy --prod --yes --token $env:VERCEL_TOKEN
+```
 
 `.vercelignore` — לא מעלה variants/docs, לא מעלה קבצי dev ישנים ב־`v/`.
 

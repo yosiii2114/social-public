@@ -2,14 +2,28 @@
 
 # העלאה — GitHub → Vercel
 
+**מדיניות (2026-11-12):** פרודקשן **רק** דרך `git push` ל־`main`.  
+אין `vercel deploy --prod` מהמחשב בשגרה — CLI רק חירום / אבחון.
+
 ## מה יש ב-repo
 
 | תיקייה | אתר |
 |--------|-----|
 | `funnybunny/` | נחיתה פאני באני |
 | `yosef-animation/` | נחיתה יוסף אנימציה |
+| `funny-bunny-course/` | נחיתת סדנת אנימציה AI |
 
 גודל כולל ~28MB (כולל וידאו) — מתאים ל-GitHub רגיל.
+
+---
+
+## 0 — טוקן Vercel (גלובלי, בלי צ'אט)
+
+מלא פעם אחת: **`C:\Users\yosef\.cursor\secrets\vercel.env`**
+
+(פרטים: `my-ai-vault\system\כלים\vercel.md`)
+
+אחרי מילוי: **«טוקן ב-vercel.env»**
 
 ---
 
@@ -50,7 +64,35 @@ git push -u origin main
 3. Deploy  
 4. שם מוצע: `yosef-animation`
 
-כל push ל-`main` מעדכן **את שני** הפרויקטים (אם שניהם מחוברים לאותו repo).
+**פרויקט ג — סדנת אנימציה**
+
+1. Import **אותו** repo  
+2. **Root Directory:** `funny-bunny-course`  
+3. Deploy  
+4. שם מוצע: `funny-bunny-course`
+
+כל push ל-`main` מעדכן את **כל** הפרויקטים המחוברים לאותו repo.
+
+### Root Directory חובה (אחרת 404)
+
+| פרויקט Vercel | Root Directory |
+|---------------|----------------|
+| `funny-bunny-course` | `funny-bunny-course` |
+| `funnybunny-landing` | `funnybunny` |
+| `yosef-animation-landing` | `yosef-animation` |
+
+Repo: `https://github.com/yosiii2114/social-public`
+
+### זרימת עבודה יומית
+
+```powershell
+cd C:\Users\yosef\Desktop\my-ai-vault\projects\social-public
+git add funny-bunny-course funnybunny yosef-animation   # לפי מה ששינית
+git commit -m "..."
+git push origin main
+```
+
+אחרי push — Vercel בונה אוטומטית (דקה–שתיים), ואז Ctrl+F5 באתר.
 
 ---
 
