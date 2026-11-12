@@ -520,3 +520,5 @@ section::after{content:"";position:absolute;inset-inline:10%;bottom:0;height:1px
 @keyframes ringspin{from{transform:rotateY(0deg)}to{transform:rotateY(-360deg)}}
 @media (prefers-reduced-motion:reduce){.ring-wrap .ring{animation:ringspin 60s linear infinite!important}}
 
+/* mobile: vertical swipe on videos scrolls the page */
+@media (max-width:760px){.phone{touch-action:pan-x pan-y}.phone video{touch-action:pan-x pan-y;pointer-events:none}}
