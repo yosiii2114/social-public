@@ -11,7 +11,7 @@
 <meta name="theme-color" content="#07060d">
 <link rel="icon" href="img/bunny.webp?v=5">
 <link rel="preload" href="f/heebo-hebrew.woff2?v=5" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 <link rel="stylesheet" href="lanyard.css?v=5">
 <link rel="stylesheet" href="pro.css?v=2">
 </head>
@@ -153,8 +153,10 @@
   <div class="wrap">
     <p class="kicker">המכונה</p>
     <h2 class="h2">ככה זה עובד בפאני באני.<br><span class="g">וככה נבנה את זה אצלך.</span></h2>
-    <div class="meter" id="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-    <ol class="steps" id="steps"><li class="st" data-i="0"><span class="st-n">1</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>חומר אמיתי + תמלול</h3><p>אודיו, רעיון לעסק, מוצר או קטע קיים. הקול נשאר אמיתי ומתמללים מילה־מילה.</p><span class="tag">הקול לא משתנה</span></div></li><li class="st" data-i="1"><span class="st-n">2</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>תסריט וסטוריבורד</h3><p>Claude כותב הוק ותסריט בסגנון שלך, אחרי מחקר על מה שעובד אצל המתחרים, ומפרק לשוטים.</p><span class="tag">Claude</span></div></li><li class="st" data-i="2"><span class="st-n">3</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>סטילים בפיקסר תלת מימדי ריאליסטי</h3><p>מרכיבים כל שוט כתמונה, עם עקביות דמות מהשוט הראשון עד האחרון. מאשרים כל still לפני שממשיכים.</p><span class="tag">עקביות דמות</span></div></li><li class="st" data-i="3"><span class="st-n">4</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>מנפישים</h3><p>still → וידאו ב־Kie.ai או Flow. בוחרים מודל לפי איכות ותקציב, שוט אחרי שוט.</p><span class="tag">Kie.ai · Flow</span></div></li><li class="st" data-i="4"><span class="st-n">5</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>עריכה מלאה ופרסום</h3><p>עריכה עם Claude Code, Cursor או Codex: כתוביות מילה־מילה, זומים, סאונד, הוק ואאוטרו. ומאותו חומר יוצאות גם וריאציות.</p><span class="tag">Claude Code · Cursor · Codex</span></div></li></ol>
+    <div class="machine-track">
+      <div class="meter meter--vert" id="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <ol class="steps" id="steps"><li class="st" data-i="0"><span class="st-n">1</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>חומר אמיתי + תמלול</h3><p>אודיו, רעיון לעסק, מוצר או קטע קיים. הקול נשאר אמיתי ומתמללים מילה־מילה.</p><span class="tag">הקול לא משתנה</span></div></li><li class="st" data-i="1"><span class="st-n">2</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>תסריט וסטוריבורד</h3><p>Claude כותב הוק ותסריט בסגנון שלך, אחרי מחקר על מה שעובד אצל המתחרים, ומפרק לשוטים.</p><span class="tag">Claude</span></div></li><li class="st" data-i="2"><span class="st-n">3</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>סטילים בפיקסר תלת מימדי ריאליסטי</h3><p>מרכיבים כל שוט כתמונה, עם עקביות דמות מהשוט הראשון עד האחרון. מאשרים כל still לפני שממשיכים.</p><span class="tag">עקביות דמות</span></div></li><li class="st" data-i="3"><span class="st-n">4</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>מנפישים</h3><p>still → וידאו ב־Kie.ai או Flow. בוחרים מודל לפי איכות ותקציב, שוט אחרי שוט.</p><span class="tag">Kie.ai · Flow</span></div></li><li class="st" data-i="4"><span class="st-n">5</span><div class="st-b"><span class="st-ic" aria-hidden="true"></span><h3>עריכה מלאה ופרסום</h3><p>עריכה עם Claude Code, Cursor או Codex: כתוביות מילה־מילה, זומים, סאונד, הוק ואאוטרו. ומאותו חומר יוצאות גם וריאציות.</p><span class="tag">Claude Code · Cursor · Codex</span></div></li></ol>
+    </div>
   </div>
 </section>
 
@@ -241,7 +243,7 @@
 
 <section class="about" id="about">
   <div class="wrap about-in">
-    <img class="about-ph" src="img/yosef_instructor.webp?v=1" alt="יוסף אחדות" width="400" height="400" loading="lazy">
+    <img class="about-ph" src="img/yosef_instructor_source.jpg?v=1" alt="יוסף אחדות" width="1024" height="824" loading="lazy" decoding="async">
     <div>
       <p class="kicker">מי מעביר</p>
       <h2 class="h2">יוסף אחדות</h2>

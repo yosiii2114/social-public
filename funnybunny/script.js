@@ -61,7 +61,12 @@
   var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce || !('IntersectionObserver' in window)) return;
   var sel='main h2,.hint,.lead,.stats li,.marquee,.reels,.card,.quotes blockquote,.shots,.steps li,.final .btn,.ai-box,.ai-card,.ai-btns';
-  var els=[].slice.call(document.querySelectorAll(sel)).filter(function(el){ return !el.closest('.hero h1'); });
+  var els=[].slice.call(document.querySelectorAll(sel)).filter(function(el){
+    return !el.closest('.hero h1') && !el.closest('.collab-lanyard');
+  });
+  /* Partner lanyard rail is always visible (no fade-out on load). */
+  var lanyard=document.querySelector('.collab-lanyard');
+  if(lanyard){ lanyard.classList.remove('reveal'); }
   document.documentElement.classList.add('rv');
   var io=new IntersectionObserver(function(es){ es.forEach(function(e){
     if(!e.isIntersecting) return;

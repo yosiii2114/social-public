@@ -25,7 +25,7 @@ section.hero{border-top:0}
 .brand small{color:var(--mut)}
 /* about */
 .about-in{display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center}
-.about-ph{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:3px solid #d6a64a}
+.about-ph{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:56% 38%;border:3px solid #d6a64a}
 .about .lead{max-width:600px;margin-bottom:14px}
 .about .lead a,.about-links a{color:#d6a64a;text-decoration:none;font-weight:700}
 .about-links{margin:6px 0 0;color:var(--mut)}

@@ -22,4 +22,17 @@ function onS(){tk=false;const y=scrollY,h=document.documentElement.scrollHeight-
  pars.forEach(el=>{const r=el.getBoundingClientRect(),c=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.transform='translate3d(0,'+(c*(+el.dataset.par)).toFixed(1)+'px,0) rotate('+(c*(+el.dataset.rot||0)).toFixed(2)+'deg)'});
  const fr=fin.getBoundingClientRect(),wr=ws.getBoundingClientRect();st.classList.toggle('show',y>hero.offsetHeight*.7&&fr.top>innerHeight*.6&&!(wr.top<innerHeight&&wr.bottom>0))}
 addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(onS)}},{passive:true});onS();
+// reels: show more
+const rSec=document.getElementById('reels-section'),rMore=document.getElementById('reels-more'),rBtn=document.querySelector('.reels-toggle');
+if(rSec&&rMore&&rBtn){const m=rBtn.querySelector('.reels-toggle-more'),l=rBtn.querySelector('.reels-toggle-less');
+ rBtn.addEventListener('click',()=>{const open=!rSec.classList.contains('is-open');rSec.classList.toggle('is-open',open);rMore.hidden=!open;rMore.setAttribute('aria-hidden',!open);rBtn.setAttribute('aria-expanded',open);m.hidden=open;l.hidden=!open;if(!open){rMore.querySelectorAll('video').forEach(v=>{v.pause();v.muted=true;const b=v.parentNode.querySelector('.snd');if(b){b.classList.remove('on');b.querySelector('.ic').textContent='🔇';b.querySelector('.lb').textContent='הקישו לסאונד'}})}else if(!rBtn.classList.contains('in')){rMore.querySelectorAll('.rv').forEach(el=>io.observe(el))}})}
+// mobile: axis lock — vertical drags scroll the page, horizontal drags the reel row
+const narrow=matchMedia('(max-width:768px)').matches;
+function bindPanYScroll(el){
+ let sx=0,sy=0,ax=null;
+ const arm=t=>{if(t.touches.length!==1)return;sx=t.touches[0].clientX;sy=t.touches[0].clientY;ax=null;el.classList.remove('is-pan-y','is-pan-x')};
+ const move=t=>{if(t.touches.length!==1)return;if(ax)return;const dx=t.touches[0].clientX-sx,dy=t.touches[0].clientY-sy;if(Math.abs(dx)<8&&Math.abs(dy)<8)return;ax=Math.abs(dy)>Math.abs(dx)*1.12?'y':'x';el.classList.toggle('is-pan-y',ax==='y');el.classList.toggle('is-pan-x',ax==='x')};
+ const end=()=>{ax=null;el.classList.remove('is-pan-y','is-pan-x')};
+ el.addEventListener('touchstart',arm,{passive:true});el.addEventListener('touchmove',move,{passive:true});['touchend','touchcancel'].forEach(ev=>el.addEventListener(ev,end,{passive:true}))}
+if(narrow){document.querySelectorAll('.reels').forEach(bindPanYScroll)}
 })();

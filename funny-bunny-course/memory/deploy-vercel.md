@@ -8,6 +8,13 @@
 - https://sadna-funnybunny.sites.tab.bot/
 - https://sadna-funnybunny-v1.sites.tab.bot/
 
+## 404 על `funny-bunny-course.vercel.app` (2026-11-10)
+
+**תסמין:** דף Vercel `NOT_FOUND`, בעוד `funny-bunny-course-yosef21.vercel.app` עובד.  
+**סיבה:** דומיין הפרויקט לא היה מצביע לדיפלוי עם `index.html` (דיפלוי Git קצר מ־שורש repo בלי Root Directory, או alias שבור אחרי שני production ברצף).  
+**תיקון:** `cd funny-bunny-course` → `npx vercel deploy --prod --yes` (טוקן מ־`vercel.env`). או `vercel alias set <deployment-url> funny-bunny-course.vercel.app`.  
+**מניעה:** ב־Vercel → Project Settings → **Root Directory** = `funny-bunny-course` (repo `yosiii2114/social-public`).
+
 ## באג נפוץ (2026-11-10)
 מדיה הייתה תחת **`v/v/`** במקום **`v/`** → 404 ב־`h_djs.mp4`, `ba_o.mp4`, `img/yosef_c.webp`, קליפים ב־ring.  
 תיקון: סנכרון מלא מ־ZIP מקצועית + deploy.

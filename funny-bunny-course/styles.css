@@ -147,10 +147,11 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 #barNow{background:#ff3d8b}#barAft{background:#25d366}
 .calc-sell{margin:16px 0 0;font-size:17px;color:var(--mut)}.calc-sell b{color:var(--tx)}
 /* machine */
-.meter{position:sticky;top:64px;z-index:5;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:10px 0;margin-bottom:10px}
-.meter i{height:6px;border-radius:9px;background:rgba(255,255,255,.12);transition:background .4s}
-.meter i.on{background:var(--grad)}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.machine-track{display:grid;grid-template-columns:7px 1fr;gap:18px;align-items:stretch;margin-top:8px}
+.meter--vert{position:sticky;top:64px;z-index:5;display:flex;flex-direction:column;gap:7px;align-self:stretch;min-height:min(68vh,520px);padding:0;margin:0;width:7px}
+.meter--vert i{flex:1 1 0;min-height:28px;width:100%;height:auto;border-radius:9px;background:rgba(255,255,255,.12);transition:background .4s}
+.meter--vert i.on{background:var(--grad)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-column:2}
 .st{display:flex;gap:14px;align-items:flex-start;opacity:.35;transform:scale(.97);transition:opacity .5s,transform .5s}
 .st.on,.st.past{opacity:1;transform:none}
 .st-n{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:24px;font-weight:900;background:rgba(255,255,255,.07);border:1px solid var(--line);transition:.4s}
@@ -311,8 +312,9 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   .dev-scan{width:min(440px,62vh)}
   .scan-steps li{font-size:19px}
   .machine .wrap{max-width:680px;margin-inline:auto}
-  .meter{position:sticky;top:72px;max-width:100%}
-  .steps{grid-template-columns:1fr;gap:clamp(14px,2.5vh,22px);max-width:600px;margin-inline:auto;width:100%}
+  .machine-track{grid-template-columns:8px 1fr;gap:22px;max-width:600px;margin-inline:auto;width:100%}
+  .meter--vert{top:72px;min-height:min(72vh,560px);width:8px;gap:8px}
+  .steps{grid-column:2;gap:clamp(14px,2.5vh,22px);max-width:none;margin:0;width:100%}
   .st{flex-direction:row;align-items:flex-start;opacity:.5}
   .st.on,.st.past{opacity:1}
   .st-b{min-height:0;width:100%}
