@@ -309,3 +309,6 @@ h3{text-wrap:balance}
 
 /* mobile: header in one row */
 @media (max-width:760px){.top{flex-wrap:nowrap;gap:4px;padding:7px;border-radius:999px}.brand{flex:0 0 auto;font-size:17px}.brand span,.brand small{display:none}.top-nav{order:2;flex:1 1 auto;min-width:0;width:auto;flex-wrap:nowrap;justify-content:center;gap:2px}.top-nav a{white-space:nowrap;font-size:clamp(9.5px,2.8vw,11px);padding:5px 5px}.top-cta{order:3;flex:0 0 auto;padding:7px 9px;font-size:12px}}
+
+/* mobile: vertical swipe on videos scrolls the page */
+@media (max-width:760px){.reels{touch-action:pan-x pan-y;overscroll-behavior-x:contain}.vwrap{touch-action:pan-x pan-y}.vwrap video{touch-action:pan-x pan-y;pointer-events:none}}
