@@ -81,7 +81,9 @@ git push -u origin main
 | `funnybunny-landing` | `funnybunny` |
 | `yosef-animation-landing` | `yosef-animation` |
 
-Repo: `https://github.com/yosiii2114/social-public`
+Repo: `https://github.com/yosiii2114/social-public` (monorepo — **לא** 3 ריפואים נפרדים).
+
+**Vercel API (2026-11-12):** שלושת הפרויקטים מחוברים ל-GitHub + `createDeployments: enabled` · Root Directory כבטבלה.
 
 ### זרימת עבודה יומית
 
