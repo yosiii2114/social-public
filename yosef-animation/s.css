@@ -321,3 +321,6 @@ section:has(>.collab-lanyard){overflow:visible}
  .orbit .ugrid li:nth-child(8){bottom:8%;left:auto;right:calc(50% + 130px)}
 }
 @media (prefers-reduced-motion:reduce){.orbit .ugrid li,.orbit .ugrid li b{animation:none}}
+
+/* mobile: vertical swipe on videos scrolls the page */
+@media (max-width:768px){.reels,.reels.is-pan-x,.reels.is-pan-y{touch-action:pan-x pan-y!important;overflow-x:auto!important;scroll-snap-type:x proximity!important;overscroll-behavior-x:contain}.reels .vwrap{touch-action:pan-x pan-y!important}.reels video{touch-action:pan-x pan-y!important;pointer-events:none}}
