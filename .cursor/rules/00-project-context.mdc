@@ -1,0 +1,10 @@
+﻿---
+description: הקשר חובה — תחילת סשן בפרויקט זה
+alwaysApply: true
+---
+
+# הקשר חובה — תחילת סשן
+1. קרא CONTEXT.md
+2. אם קיים: PRD.md, design.md, log.md, decisions.md
+3. אחרי עדכון לאחד מהם — קרא שוב לפני המשך עבודה
+Open Folder צריך להיות תיקיית הפרויקט הזו.

@@ -24,7 +24,7 @@
 |--------|---------|--------|
 | `funnybunny/` | @funny_bunny.ai | מותג |
 | `yosef-animation/` | @yosef_ahm19 (אנימציה) | הזמנות שירות |
-| `funny-bunny-course/` | @funny_bunny.ai / @yosef_ahm19 | הרשמה לקורס |
+| `funny-bunny-course/` | @funny_bunny.ai / @yosef_ahm19 | הרשמה לקורס 1,770 ₪ |
 
 ## ניווט
 
